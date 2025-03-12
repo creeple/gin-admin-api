@@ -5,6 +5,7 @@ import (
 	"gin-admin-api/config"
 	"gin-admin-api/core"
 	"gin-admin-api/global"
+	"gin-admin-api/router"
 )
 
 func main() {
@@ -22,4 +23,5 @@ func main() {
 		global.Log.Error(err.Error())
 	}
 	fmt.Println(config.Config.Mysql)
+	_ = router.InitRouter().Run()
 }
